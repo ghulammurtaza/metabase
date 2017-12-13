@@ -23,7 +23,6 @@
            [java.sql SQLException Timestamp]
            [java.text Normalizer Normalizer$Form]
            [java.util Calendar Date TimeZone]
-           javax.xml.bind.DatatypeConverter
            org.joda.time.DateTime
            org.joda.time.format.DateTimeFormatter))
 
@@ -66,7 +65,7 @@
               (->Timestamp (.getTime this)))
   ;; Strings are expected to be in ISO-8601 format. `YYYY-MM-DD` strings *are* valid ISO-8601 dates.
   String    (->Timestamp [this]
-              (->Timestamp (DatatypeConverter/parseDateTime this)))
+              (->Timestamp (coerce/from-string this)))
   DateTime  (->Timestamp [this]
               (->Timestamp (.getMillis this))))
 
