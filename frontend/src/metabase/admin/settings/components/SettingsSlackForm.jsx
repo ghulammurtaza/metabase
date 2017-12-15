@@ -198,7 +198,7 @@ export default class SettingsSlackForm extends Component {
             <form noValidate>
                 <div className="px2" style={{maxWidth: "585px"}}>
                     <h1>
-                        Metabase
+                        eKomi
                         <RetinaImage
                             className="mx1"
                             src="app/assets/img/slack_emoji.png"
@@ -211,12 +211,12 @@ export default class SettingsSlackForm extends Component {
 
                     <div className="pt3">
                         <a href="https://my.slack.com/services/new/bot" target="_blank" className="Button Button--primary" style={{padding:0}}>
-                            <div className="float-left py2 pl2">{t`Create a Slack Bot User for MetaBot`}</div>
+                            <div className="float-left py2 pl2">{t`Create a Slack Bot User for eKomiBot`}</div>
                             <Icon className="float-right p2 text-white cursor-pointer" style={{opacity:0.6}} name="external" size={18}/>
                         </a>
                     </div>
                     <div className="py2">
-                        {jt`Once you're there, give it a name and click ${<strong>"Add bot integration"</strong>}. Then copy and paste the Bot API Token into the field below. Once you are done, create a "metabase_files" channel in Slack. Metabase needs this to upload graphs.`}
+                        {jt`Once you're there, give it a name and click ${<strong>"Add bot integration"</strong>}. Then copy and paste the Bot API Token into the field below. Once you are done, create a "metabase_files" channel in Slack. eKomi needs this to upload graphs.`}
                     </div>
                 </div>
                 <ul>

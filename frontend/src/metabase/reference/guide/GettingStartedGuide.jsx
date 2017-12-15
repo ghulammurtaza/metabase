@@ -234,14 +234,14 @@ export default class GettingStartedGuide extends Component {
                                 }
                                 <div>
                                     { Object.keys(segments).length > 0 && (
-                                        <Link className="Button Button--purple mr2" to={'/reference/segments'}>
+                                        <Link className="Button Button--primary mr2" to={'/reference/segments'}>
                                             {t`See all segments`}
                                         </Link>
                                     )}
                                     <Link
                                         className={cx(
                                             { 'text-purple text-bold no-decoration text-underline-hover' : Object.keys(segments).length > 0 },
-                                            { 'Button Button--purple' : Object.keys(segments).length === 0 }
+                                            { 'Button Button--primary' : Object.keys(segments).length === 0 }
                                         )}
                                         to={'/reference/databases'}
                                     >

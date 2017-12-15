@@ -132,7 +132,7 @@ const SECTIONS = [
             {
                 key: "email-from-address",
                 display_name: "From Address",
-                placeholder: "metabase@yourcompany.com",
+                placeholder: "eKomi@yourcompany.com",
                 type: "string",
                 required: true,
                 validations: [["email", "That's not a valid email address"]]
@@ -153,7 +153,7 @@ const SECTIONS = [
             },
             {
                 key: "metabot-enabled",
-                display_name: "MetaBot",
+                display_name: "eKomiBot",
                 type: "boolean",
                 // TODO: why do we have "defaultValue" in addition to "default" in the backend?
                 defaultValue: false,
@@ -270,7 +270,7 @@ const SECTIONS = [
             {
                 key: "map-tile-server-url",
                 display_name: "Map tile server URL",
-                note: "Metabase uses OpenStreetMaps by default.",
+                note: "eKomi uses OpenStreetMaps by default.",
                 type: "string"
             },
             {
