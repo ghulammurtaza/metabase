@@ -13,7 +13,7 @@ export const setHierarchical = (hierarchical) => HIERARCHICAL = hierarchical;
 export const setBaseName = (baseName) => BASE_NAME = baseName;
 
 const updateDocumentTitle = _.debounce(() => {
-    if (HIERARCHICAL) {
+    if (!HIERARCHICAL) {
         document.title = componentStack
             .map(component => component._documentTitle)
             .filter(title => title)
@@ -24,6 +24,9 @@ const updateDocumentTitle = _.debounce(() => {
         for (let i = componentStack.length - 1; i >= 0; i--) {
             let title = componentStack[i]._documentTitle;
             if (title) {
+                if(title == 'Metabase'){
+                    title = 'eKomi'
+                }
                 if (BASE_NAME) {
                     title += SEPARATOR + BASE_NAME;
                 }

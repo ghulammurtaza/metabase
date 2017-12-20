@@ -9,7 +9,7 @@ const EmbeddingLegalese = ({ onChange }) =>
             {t`By enabling embedding you're agreeing to the embedding license located at`} <a className="link"  href="http://www.eKomi.com/license/embedding" target="_blank">eKomi.com/license/embedding</a>.
         </p>
         <p className="text-grey-4" style={{ lineHeight: 1.48 }}>
-            {t`In plain english, when you embed charts or dashboards from eKomi in your own application, that application isn't subject to the Affero General Public License that covers the rest of eKomi, provided you keep the eKomi logo and the "Powered by eKomi" visible on those embeds. You should however, read the license text linked above as that is the actual license that you will be agreeing to by enabling this feature.`}
+            {t`In plain english, when you embed charts or dashboards from eKomi in your own application, that application isn't subject to the Affero General Public License that covers the rest of eKomi, provided you keep the eKomi logo and the "Powered by InsurBI" visible on those embeds. You should however, read the license text linked above as that is the actual license that you will be agreeing to by enabling this feature.`}
         </p>
         <div className="flex layout-centered mt4">
             <button

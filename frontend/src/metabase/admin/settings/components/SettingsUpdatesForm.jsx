@@ -73,15 +73,15 @@ export default class SettingsUpdatesForm extends Component {
         if (!versionInfo || MetabaseUtils.compareVersions(currentVersion, versionInfo.latest.version) >= 0) {
             return (
                 <div className="p2 bg-brand bordered rounded border-brand text-white text-bold">
-                    You're running Metabase {this.removeVersionPrefixIfNeeded(currentVersion)} which is the latest and greatest!
+                    You're running eKomi {this.removeVersionPrefixIfNeeded(currentVersion)} which is the latest and greatest!
                 </div>
             );
         } else {
             return (
                 <div>
                     <div className="p2 bg-green bordered rounded border-green flex flex-row align-center justify-between">
-                        <span className="text-white text-bold">Metabase {this.removeVersionPrefixIfNeeded(versionInfo.latest.version)} is available.  You're running {this.removeVersionPrefixIfNeeded(currentVersion)}</span>
-                        <a data-metabase-event={"Updates Settings; Update link clicked; "+versionInfo.latest.version} className="Button Button--white Button--medium borderless" href="http://www.metabase.com/start" target="_blank">Update</a>
+                        <span className="text-white text-bold">eKomi {this.removeVersionPrefixIfNeeded(versionInfo.latest.version)} is available.  You're running {this.removeVersionPrefixIfNeeded(currentVersion)}</span>
+                        <a data-metabase-event={"Updates Settings; Update link clicked; "+versionInfo.latest.version} className="Button Button--white Button--medium borderless" href="" target="_blank">Update</a>
                     </div>
 
                     <div className="text-grey-3">

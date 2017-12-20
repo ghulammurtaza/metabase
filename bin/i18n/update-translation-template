@@ -35,9 +35,9 @@ LOC_OPT=$(xgettext --add-location=file -f - </dev/null >/dev/null 2>&1 && echo -
 find src -name "*.clj" | xgettext                   \
   --from-code=UTF-8                                 \
   --language=lisp                                   \
-  --copyright-holder='Metabase <docs@metabase.com>' \
+  --copyright-holder='eKomi <docs@eKomi.com>' \
   --package-name="metabase"                         \
-  --msgid-bugs-address="docs@metabase.com"          \
+  --msgid-bugs-address="docs@eKomi.com"          \
   -k                                                \
   -kmark:1 -ki18n/mark:1                            \
   -ktrs:1 -ki18n/trs:1                              \
