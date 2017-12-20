@@ -1,19 +1,19 @@
 {
   "charset": "utf-8",
   "headers": {
-    "project-id-version": "metabase",
-    "report-msgid-bugs-to": "docs@metabase.com",
+    "project-id-version": "eKomi",
+    "report-msgid-bugs-to": "docs@eKomi.com",
     "pot-creation-date": "2017-08-21 21:54+0200",
     "po-revision-date": "2017-08-21 21:17+0200",
-    "last-translator": "Tom Robinson <tom@metabase.com>",
+    "last-translator": "Tom Robinson <tom@eKomi.com>",
     "language-team": "German <translation-team-de@lists.sourceforge.net>",
     "language": "de",
     "mime-version": "1.0",
     "content-type": "text/plain; charset=UTF-8",
     "content-transfer-encoding": "8bit",
-    "#-#-#-#-#  metabase-frontend.pot  #-#-#-#-#": "",
+    "#-#-#-#-#  eKomi-frontend.pot  #-#-#-#-#": "",
     "plural-forms": "nplurals=2; plural=(n != 1);",
-    "#-#-#-#-#  metabase-backend.pot (metabase)  #-#-#-#-#": ""
+    "#-#-#-#-#  eKomi-backend.pot (eKomi)  #-#-#-#-#": ""
   },
   "translations": {
     "": {

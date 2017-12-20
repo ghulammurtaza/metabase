@@ -107,14 +107,6 @@ export default class ProfileLink extends Component {
                                     </a>
                                 </li>
 
-                                { user.is_superuser &&
-                                    <li>
-                                        // <a data-metabase-event={"Navbar;Profile Dropdown;Debugging "+tag} onClick={this.openModal.bind(this, "logs")} className="Dropdown-item block text-white no-decoration">
-                                        //     Logs
-                                        // </a>
-                                    </li>
-                                }
-
                                 <li>
                                     <a data-metabase-event={"Navbar;Profile Dropdown;About "+tag} onClick={this.openModal.bind(this, "about")} className="Dropdown-item block text-white no-decoration">
                                         About eKomi
