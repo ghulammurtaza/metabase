@@ -104,7 +104,7 @@ export default class Navbar extends Component {
             <nav className="Nav sm-py1 relative">
                 <ul className="wrapper flex align-center">
                     <li>
-                        <Link to="/" data-metabase-event={"Navbar;Logo"} className="NavItem cursor-pointer flex align-center">
+                        <Link to="/" data-metabase-event={"Navbar;Logo"} className="NavItem cursor-pointer flex align-center padding">
                             <LogoIcon className="text-brand my2"></LogoIcon>
                         </Link>
                     </li>

@@ -17,7 +17,7 @@ export default class LogoIcon extends Component {
     render() {
         let { dark, height, width, size } = this.props;
         return (
-            <img src="http://www.ekomi-us.com/us/wp-content/uploads/2015/11/logo_header1.png" alt="eKomi">
+            <img src={'https://image.ibb.co/kGbDkR/logo_header.png'} />
         );
     }
 }

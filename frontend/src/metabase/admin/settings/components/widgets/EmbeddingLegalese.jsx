@@ -1,5 +1,5 @@
 import React from 'react';
-import eKomiAnalytics from 'metabase/lib/analytics';
+import MetabaseAnalytics from 'metabase/lib/analytics';
 import { t } from 'c-3po';
 
 const EmbeddingLegalese = ({ onChange }) =>
