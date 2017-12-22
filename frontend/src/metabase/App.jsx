@@ -31,13 +31,22 @@ const getErrorComponent = ({status, data, context}) => {
 export default class App extends Component {
     render() {
         const { children, location, errorPage } = this.props;
+        let footer = '';
+        
+        let blackListed = ['/auth/login','/auth/forgot_password'];
+        if(blackListed.indexOf(location.pathname) < 0){
+            footer = <div className="AdminNav" style={{textAlign:'center',width:'200px',right:0, borderRadius:'5px',padding:'5px',position:'fixed', bottom:0}}><h3>Powered by InsurBI</h3></div>
+        }
 
         return (
             <div className="spread flex flex-column">
                 <Navbar location={location} className="flex-no-shrink"/>
                 { errorPage ? getErrorComponent(errorPage) : children }
                 <UndoListing />
+                {footer}
             </div>
         )
     }
 }
+
+

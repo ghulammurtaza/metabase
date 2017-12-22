@@ -110,7 +110,7 @@ export default class AuthScene extends Component {
                     </div>
                 </div>
                 { /*  09-12-2016 */ }
-                <div id="caspian" className="bg-brand block py3 absolute bottom left right"></div>
+                <div id="caspian" className="bg-brand block py3 absolute bottom left right"><center><h3 style={{color:'white'}}>Powered by InsurBI</h3></center></div>
             </section>
         );
     }

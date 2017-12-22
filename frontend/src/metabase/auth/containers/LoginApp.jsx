@@ -108,10 +108,10 @@ export default class LoginApp extends Component {
         const { loginError } = this.props;
 
         return (
-            <div className="full-height full bg-white flex flex-column flex-full md-layout-centered">
+            <div className="full-height full bg-white flex flex-column flex-full " style={{paddingTop:'95px'}}>
                 <div className="Login-wrapper wrapper Grid Grid--full md-Grid--1of2 relative z2">
                     <div className="Grid-cell flex layout-centered text-brand">
-                        <LogoIcon className="Logo my4 sm-my0" width={66} height={85} />
+                        <img style={{marginLeft:'-170px', maxWidth:'450px'}} src={'https://image.ibb.co/duYpEm/logo.jpg'}/>
                     </div>
                     <div className="Login-content Grid-cell">
                         <form className="Form-new bg-white bordered rounded shadowed" name="form" onSubmit={(e) => this.formSubmitted(e)} noValidate>

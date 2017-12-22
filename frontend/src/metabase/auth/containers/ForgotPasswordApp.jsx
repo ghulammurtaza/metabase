@@ -47,10 +47,10 @@ export default class ForgotPasswordApp extends Component {
         const emailConfigured = MetabaseSettings.isEmailConfigured();
 
         return (
-            <div className="full-height bg-white flex flex-column flex-full md-layout-centered">
+            <div className="full-height bg-white flex flex-column flex-full" style={{paddingTop:'200px'}}>
                 <div className="Login-wrapper wrapper Grid Grid--full md-Grid--1of2">
                       <div className="Grid-cell flex layout-centered text-brand">
-                          <LogoIcon className="Logo my4 sm-my0" width={66} height={85} />
+                        <img style={{marginLeft:'-170px', maxWidth:'450px'}} src={'https://image.ibb.co/duYpEm/logo.jpg'}/>
                       </div>
                       { !emailConfigured ?
                       <div className="Grid-cell">
