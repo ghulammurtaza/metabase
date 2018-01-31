@@ -31,6 +31,7 @@ const getErrorComponent = ({status, data, context}) => {
 export default class App extends Component {
     render() {
         const { children, location, errorPage } = this.props;
+        //console.log(location);
         let footer = '';
         
         let blackListed = ['/auth/login','/auth/forgot_password'];

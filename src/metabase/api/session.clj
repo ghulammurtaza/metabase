@@ -178,6 +178,16 @@
       (when-not (= (:email_verified <>) "true")
         (throw (ex-info "Email is not verified." {:status-code 400}))))))
 
+(defn- ekomi-connect-auth-token-info [^String token]
+  (log/info "inside ekomi-connect-auth-token-info")
+  (let [{:keys [status body]} (http/get "http://ekomi-connect-2-staging-1.ekomiapps.de/oauth/v2/token?client_id=39_2jzv5m4b0e4gscgkgg44ow44c4cogccw8ckgg4sss0okg0og8o&client_secret=14qtdd1jzla8s8sgg88o80gswkgwk8oows0s880c8g0gkwks8k&grant_type=client_credentials" 
+    { :accept "text/html"
+      :content-type :json
+    })]
+    (when-not (= status 200)
+      (throw (ex-info "Invalid Google Auth token." {:status-code 400})))
+    (u/prog1 (json/parse-string body keyword))))
+
 ;; TODO - are these general enough to move to `metabase.util`?
 (defn- email->domain ^String [email]
   (last (re-find #"^.*@(.*$)" email)))
@@ -193,11 +203,11 @@
 (defn- check-autocreate-user-allowed-for-email [email]
   (when-not (autocreate-user-allowed-for-email? email)
     ;; Use some wacky status code (428 - Precondition Required) so we will know when to so the error screen specific to this situation
-    (throw (ex-info "You'll need an administrator to create a Metabase account before you can use Google to log in."
+    (throw (ex-info "You'll need an administrator to create a eKomi account before you can use Google to log in."
              {:status-code 428}))))
 
 (defn- google-auth-create-new-user! [first-name last-name email]
-  (check-autocreate-user-allowed-for-email email)
+  ;;(check-autocreate-user-allowed-for-email email)
   ;; this will just give the user a random password; they can go reset it if they ever change their mind and want to log in without Google Auth;
   ;; this lets us keep the NOT NULL constraints on password / salt without having to make things hairy and only enforce those for non-Google Auth users
   (user/create-new-google-auth-user! first-name last-name email))
@@ -216,6 +226,16 @@
   (let [{:keys [given_name family_name email]} (google-auth-token-info token)]
     (log/info "Successfully authenticated Google Auth token for:" given_name family_name)
     (google-auth-fetch-or-create-user! given_name family_name email)))
+
+(api/defendpoint GET "/ekomi_connect"
+  "Login with Ekomi Connect."
+  [:as {{:keys [token]} :body, remote-address :remote-addr}]
+  ;;{token su/NonBlankString}
+  (throttle/check (login-throttlers :ip-address) remote-address)
+
+  (let [{:keys [access_token expires_in token_type]} (ekomi-connect-auth-token-info "abc")]
+    (log/info "Authenticated Token recieved is :" access_token)
+    (google-auth-fetch-or-create-user! "eKomi-Connect" "eKomi-Connect" "ekomi_connect@ekomi.com")))
 
 
 (api/define-routes)

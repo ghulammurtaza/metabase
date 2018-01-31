@@ -32,6 +32,11 @@
     animation-direction: alternate;
 }
 
+.ekomi-btn{
+    background-color: #29a00a;
+    color: white;
+}
+
 @keyframes boat_trip {
     0% {
         margin-left: -2%;

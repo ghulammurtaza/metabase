@@ -86,7 +86,7 @@ export default class MetricSearch extends Component {
                                     message={<span>Defining common metrics for your team makes it even easier to ask questions</span>}
                                     image="/app/img/metrics_illustration"
                                     action="How to create metrics"
-                                    link="http://www.metabase.com/docs/latest/administration-guide/07-segments-and-metrics.html"
+                                    link=""
                                     className="mt2"
                                     imageClassName="mln2"
                                 />

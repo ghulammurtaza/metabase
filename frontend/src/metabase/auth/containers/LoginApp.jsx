@@ -7,12 +7,14 @@ import cx from "classnames";
 
 import AuthScene from "../components/AuthScene.jsx";
 import SSOLoginButton from "../components/SSOLoginButton.jsx";
+import EkomiConnectButton from "../components/EkomiConnectButton.jsx";
 import FormField from "metabase/components/form/FormField.jsx";
 import FormLabel from "metabase/components/form/FormLabel.jsx";
 import FormMessage from "metabase/components/form/FormMessage.jsx";
 import LogoIcon from "metabase/components/LogoIcon.jsx";
 import Settings from "metabase/lib/settings";
 import Utils from "metabase/lib/utils";
+import Icon from "metabase/components/Icon";
 
 
 import * as authActions from "../auth";
@@ -55,7 +57,6 @@ export default class LoginApp extends Component {
     }
 
     componentDidMount() {
-
         this.validateForm();
 
         const { loginGoogle, location } = this.props;
@@ -96,11 +97,18 @@ export default class LoginApp extends Component {
 
     formSubmitted(e) {
         e.preventDefault();
-
         let { login, location } = this.props;
         let { credentials } = this.state;
 
         login(credentials, location.query.redirect);
+    }
+
+    ekomiConnect(e) {
+        e.preventDefault();
+        let { loginEkomi, location } = this.props;
+        let { credentials } = this.state;
+
+        loginEkomi('', location.query.redirect);
     }
 
     render() {
@@ -115,7 +123,7 @@ export default class LoginApp extends Component {
                     </div>
                     <div className="Login-content Grid-cell">
                         <form className="Form-new bg-white bordered rounded shadowed" name="form" onSubmit={(e) => this.formSubmitted(e)} noValidate>
-                            <h3 className="Login-header Form-offset">Sign in to Metabase</h3>
+                            <h3 className="Login-header Form-offset">Sign in to eKomi</h3>
 
                             { Settings.ssoEnabled() &&
                                 <div className="mx4 mb4 py3 border-bottom relative">
@@ -126,7 +134,20 @@ export default class LoginApp extends Component {
                                     </div>
                                 </div>
                             }
-
+                            <div className="mx4 mb4 py3 border-bottom relative">
+                                <div className="relative z2  p2 cursor-pointer shadow-hover text-centered sm-text-left rounded block sm-inline-block bordered shadowed ekomi-btn">
+                                    <div className="flex align-center">
+                                        <Icon className="mr1" name='ekomiConnect' />
+                                        <h4 onClick={(e) => this.ekomiConnect()}>LOGIN VIA EKOMI CONNECT</h4>
+                                    </div>
+                                </div>
+                                <div className="mx1 absolute text-centered left right" style={{ bottom: -8 }}>
+                                    <span className="text-bold px3 py2 text-grey-3 bg-white">OR</span>
+                                </div>
+                                <div className="mx1 absolute text-centered left right" style={{ bottom: -8 }}>
+                                    <span className="text-bold px3 py2 text-grey-3 bg-white">OR</span>
+                                </div>
+                            </div>
                             <FormMessage formError={loginError && loginError.data.message ? loginError : null} ></FormMessage>
 
                             <FormField key="username" fieldName="username" formError={loginError}>

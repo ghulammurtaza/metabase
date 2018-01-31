@@ -321,7 +321,7 @@ const SECTIONS = [
                 }
             }, {
                 key: "enable-embedding",
-                display_name: "Enable Embedding Metabase in other Applications",
+                display_name: "Enable Embedding eKomi in other Applications",
                 type: "boolean",
                 getHidden: (settings) => !settings["enable-embedding"]
             },

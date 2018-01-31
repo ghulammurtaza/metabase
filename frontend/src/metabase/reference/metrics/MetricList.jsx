@@ -30,7 +30,7 @@ const emptyStateData = {
     message: t`Metrics will appear here once your admins have created some`,
     image: "app/assets/img/metrics-list",
     adminAction: t`Learn how to create metrics`,
-    adminLink: "http://www.metabase.com/docs/latest/administration-guide/07-segments-and-metrics.html"
+    adminLink: ""
 }
 
 const mapStateToProps = (state, props) => ({

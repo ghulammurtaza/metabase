@@ -30,7 +30,7 @@ export const CollectionEmptyState = () =>
             <div className="mt1">
                 {t`Collections help you organize your questions and allow you to decide who gets to see what.`}
                 {" "}
-                <a href="http://www.metabase.com/docs/latest/administration-guide/06-collections.html" target="_blank">
+                <a href="" target="_blank">
                     {t`Learn more`}
                 </a>
             </div>

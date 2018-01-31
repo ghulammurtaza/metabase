@@ -197,9 +197,9 @@ export default class DatabaseDetailsForm extends Component {
                             <Toggle value={on} onChange={(val) => this.onChange("let-user-control-scheduling", val)}/>
                         </div>
                         <div className="px2">
-                            <h3>This is a large database, so let me choose when Metabase syncs and scans</h3>
+                            <h3>This is a large database, so let me choose when eKomi syncs and scans</h3>
                             <div style={{maxWidth: "40rem"}} className="pt1">
-                                By default, Metabase does a lightweight hourly sync, and an intensive daily scan of field values.
+                                By default, eKomi does a lightweight hourly sync, and an intensive daily scan of field values.
                                 If you have a large database, we recommend turning this on and reviewing when and how often the field value scans happen.
                             </div>
                         </div>

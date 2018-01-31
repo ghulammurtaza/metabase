@@ -3,7 +3,7 @@ import ReactRetinaImage from 'react-retina-image'
 
 import SettingsInput from "./SettingInput"
 
-const PREMIUM_EMBEDDING_STORE_URL = 'https://store.metabase.com/product/embedding'
+const PREMIUM_EMBEDDING_STORE_URL = ''
 const PREMIUM_EMBEDDING_SETTING_KEY = 'premium-embedding-token'
 
 const PremiumTokenInput = ({ token, onChangeSetting }) =>

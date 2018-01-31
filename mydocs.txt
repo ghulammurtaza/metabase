@@ -1,0 +1,26 @@
+=== Setup
+
+
+
+=== Introduction
+
+
+
+
+
+=== FrontEnd WorkFlow
+
+
+
+
+
+--- Frontend relevant blog references
+=== Backend Workflows
+
+
+
+
+
+https://kendru.github.io/2014/02/16/writing-a-restful-web-service-in-clojure-part-1-setup/
+https://www.tutorialspoint.com/clojure/clojure_databases.htm
+https://www.tutorialspoint.com/clojure/clojure_databases.htm

@@ -212,7 +212,7 @@ export const MetricApi = {
 
 export const RevisionApi = {
     list:                        GET("/api/revision"),
-    revert:                     POST("/api/revision/revert"),
+    revert:                      POST("/api/revision/revert"),
 };
 
 export const RevisionsApi = {
@@ -221,19 +221,20 @@ export const RevisionsApi = {
 
 export const LabelApi = {
     list:                        GET("/api/label"),
-    create:                     POST("/api/label"),
+    create:                      POST("/api/label"),
     update:                      PUT("/api/label/:id"),
-    delete:                   DELETE("/api/label/:id"),
+    delete:                      DELETE("/api/label/:id"),
 };
 
 export const SessionApi = {
     create:                     POST("/api/session"),
     createWithGoogleAuth:       POST("/api/session/google_auth"),
-    delete:                   DELETE("/api/session"),
-    properties:                  GET("/api/session/properties"),
+    createWithEkomiConnect:     GET("/api/session/ekomi_connect"),
+    delete:                     DELETE("/api/session"),
+    properties:                 GET("/api/session/properties"),
     forgot_password:            POST("/api/session/forgot_password"),
     reset_password:             POST("/api/session/reset_password"),
-    password_reset_token_valid:  GET("/api/session/password_reset_token_valid"),
+    password_reset_token_valid: GET("/api/session/password_reset_token_valid"),
 };
 
 export const SettingsApi = {

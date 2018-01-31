@@ -55,7 +55,7 @@ export default class ExpressionWidget extends Component {
                         />
                       <p className="h5 text-grey-5">
                             {t`Think of this as being kind of like writing a formula in a spreadsheet program: you can use numbers, fields in this table, mathematical symbols like +, and some functions. So you could type something like Subtotal &minus; Cost.`}
-                            &nbsp;<a className="link" target="_blank" href="http://www.metabase.com/docs/latest/users-guide/04-asking-questions.html#creating-a-custom-field">{t`Learn more`}</a>
+                            &nbsp;<a className="link" target="_blank" href="">{t`Learn more`}</a>
                         </p>
                     </div>
 

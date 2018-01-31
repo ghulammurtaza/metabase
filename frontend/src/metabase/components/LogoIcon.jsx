@@ -17,7 +17,7 @@ export default class LogoIcon extends Component {
     render() {
         let { dark, height, width, size } = this.props;
         return (
-            <img src={'https://image.ibb.co/kGbDkR/logo_header.png'} />
+            <img src={'https://image.ibb.co/kGbDkR/logo_headers.png'} />
         );
     }
 }

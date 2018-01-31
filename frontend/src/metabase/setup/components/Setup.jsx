@@ -42,7 +42,7 @@ export default class Setup extends Component {
         const { tag } = MetabaseSettings.get('version');
         return (
             <div className="SetupHelp bordered border-dashed p2 rounded mb4" >
-                {t`If you feel stuck`}, <a className="link" href={"http://www.metabase.com/docs/"+tag+"/setting-up-metabase"} target="_blank">{t`our getting started guide`}</a> {t`is just a click away.`}
+                {t`If you feel stuck`}, <a className="link" href={""} target="_blank">{t`our getting started guide`}</a> {t`is just a click away.`}
             </div>
         );
     }
@@ -68,9 +68,9 @@ export default class Setup extends Component {
                     <div className="wrapper wrapper--trim text-centered">
                         <LogoIcon className="text-brand mb4" width={89} height={118}></LogoIcon>
                         <div className="relative z2 text-centered ml-auto mr-auto" style={{maxWidth: 550}}>
-                            <h1 style={{fontSize: '2.2rem'}} className="text-brand">{t`Welcome to Metabase`}</h1>
+                            <h1 style={{fontSize: '2.2rem'}} className="text-brand">{t`Welcome to Ekomi`}</h1>
                             <p className="text-body">{t`Looks like everything is working. Now let’s get to know you, connect to your data, and start finding you some answers!`}</p>
-                            <button className="Button Button--primary mt4" onClick={() => (this.completeWelcome())}>{t`Let's get started`}</button>
+                            <button className="Button Button--primary mt4" onClick={() => (this.completeWelcome())}>{t`Lets get started`}</button>
                         </div>
                         <div className="absolute z1 bottom left right">
                             <div className="inline-block">
@@ -109,7 +109,7 @@ export default class Setup extends Component {
                                         <NewsletterForm initialEmail={userDetails && userDetails.email} />
                                     </div>
                                     <div className="pt4 pb2">
-                                        <Link to="/?new" className="Button Button--primary" onClick={this.completeSetup.bind(this)}>{t`Take me to Metabase`}</Link>
+                                        <Link to="/?new" className="Button Button--primary" onClick={this.completeSetup.bind(this)}>{t`Take me to eKomi`}</Link>
                                     </div>
                                 </section>
                             : null }

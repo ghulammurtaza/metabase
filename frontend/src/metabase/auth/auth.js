@@ -72,6 +72,36 @@ export const loginGoogle = createThunkAction(LOGIN_GOOGLE, function(googleUser, 
     };
 });
 
+// login eKomi
+export const LOGIN_EKOMI = "metabase/auth/LOGIN_EKOMI";
+export const loginEkomi = createThunkAction(LOGIN_EKOMI, function(user, redirectUrl) {
+    return async function(dispatch, getState) {
+        try {
+            let newSession = await SessionApi.createWithEkomiConnect({
+                token: 'ABC'
+            });
+
+            // since we succeeded, lets set the session cookie
+            MetabaseCookies.setSessionCookie(newSession.id);
+
+            MetabaseAnalytics.trackEvent('Auth', 'Ekomi Auth Login');
+
+            // TODO: redirect after login (carry user to intended destination)
+            await dispatch(refreshCurrentUser());
+            dispatch(push(redirectUrl || "/"));
+
+        } catch (error) {
+            // clearGoogleAuthCredentials();
+            // // If we see a 428 ("Precondition Required") that means we need to show the "No Metabase account exists for this Google Account" page
+            // if (error.status === 428) {
+            //     dispatch(push("/auth/google_no_mb_account"));
+            // } else {
+            //     return error;
+            // }
+        }
+    };
+});
+
 // logout
 export const LOGOUT = "metabase/auth/LOGOUT";
 export const logout = createThunkAction(LOGOUT, function() {

@@ -1,6 +1,6 @@
 
 ## Managing Databases
-If you already connected your database during the installation, you’ve probably a covered a lot of this info. But if you need to add another database or manage the settings of the one you already have connected, just click the circle with your initials in the top right of Metabase and select the **Admin Panel**.
+If you already connected your database during the installation, you’ve probably a covered a lot of this info. But if you need to add another database or manage the settings of the one you already have connected, just click the circle with your initials in the top right of eKomi and select the **Admin Panel**.
 
 ![profiledropdown](images/ProfileDropdown.png)
 
@@ -8,7 +8,7 @@ Cool, now you’re in the admin panel. Next, select **Databases** from the menu 
 
 ### Adding a Database Connection
 
-Now you’ll see a list of your databases. To connect another database to Metabase, click **Add database**. Metabase currently supports the following types of databases:
+Now you’ll see a list of your databases. To connect another database to eKomi, click **Add database**. eKomi currently supports the following types of databases:
 
 * Amazon Redshift
 * [Google BigQuery](databases/bigquery.md)
@@ -30,7 +30,7 @@ To add a database, you'll need its connection information.
 #### <a name="heroku-databases"></a>Getting connection information for Databases on Heroku:
 
 1. Go to [https://postgres.heroku.com/databases](https://postgres.heroku.com/databases).
-2. Click on the database you want to connect to Metabase.
+2. Click on the database you want to connect to eKomi.
 3. Write down the following information based on your database:
     * Hostname
     * Port
@@ -44,7 +44,7 @@ To add a database, you'll need its connection information.
     * Need help finding that?  Visit [https://**My_AWS_Account_ID**.signin.aws.amazon.com/console](https://**My_AWS_Account_ID**.signin.aws.amazon.com/console).  Be sure to insert your own AWS Account ID, though!
 2.  Under "Database" services, click "RDS".
 3.  Then click "Instances".
-4.  Select the database you want to connect to Metabase.
+4.  Select the database you want to connect to eKomi.
 5.  Write down the following information based on your database:
     * Hostname - This is listed as the "Endpoint" parameter
     * Port - Find the port parameter under "Security and Network"
@@ -55,23 +55,23 @@ To add a database, you'll need its connection information.
 
 ### Secure Socket Layer (SSL)
 
-Metabase automatically tries to connect to databases with and without SSL. If it is possible to connect to your database with a SSL connection, Metabase will make that the default setting for your database. You can always change this setting later if you prefer to connect without this layer of security, but we highly recommend keeping SSL turned on to keep your data secure.
+eKomi automatically tries to connect to databases with and without SSL. If it is possible to connect to your database with a SSL connection, eKomi will make that the default setting for your database. You can always change this setting later if you prefer to connect without this layer of security, but we highly recommend keeping SSL turned on to keep your data secure.
 
 ### Database Sync and Analysis
 
-By default, Metabase performs a lightweight hourly sync of your database, and a nightly deeper analysis of the fields in your tables to power some of Metabase's features, like filter widgets.
+By default, eKomi performs a lightweight hourly sync of your database, and a nightly deeper analysis of the fields in your tables to power some of eKomi's features, like filter widgets.
 
-If you'd like to change these default settings, find and click on your database in the Databases section of the Admin Panel, and turn on the toggle at the bottom of the form that says "This is a large database, so let me choose when Metabase syncs and scans." (This is an option that used to be called "Enable in-depth analysis.")
+If you'd like to change these default settings, find and click on your database in the Databases section of the Admin Panel, and turn on the toggle at the bottom of the form that says "This is a large database, so let me choose when eKomi syncs and scans." (This is an option that used to be called "Enable in-depth analysis.")
 
 ![Large database toggle](images/large-db-toggle.png)
 
-Save your changes, and you'll see a new tab at the top of the form called "Scheduling." Click on that, and you'll see options to change when and how often Metabase syncs and scans.
+Save your changes, and you'll see a new tab at the top of the form called "Scheduling." Click on that, and you'll see options to change when and how often eKomi syncs and scans.
 
 #### Database syncing
 
-Metabase maintains its own information about the various tables and fields in each database that is added to aid in querying. By default, Metabase performs this lightweight sync hourly to look for changes to the database such as new tables or fields. Metabase does *not* copy any data from your database. It only maintains lists of the tables and columns.
+eKomi maintains its own information about the various tables and fields in each database that is added to aid in querying. By default, eKomi performs this lightweight sync hourly to look for changes to the database such as new tables or fields. eKomi does *not* copy any data from your database. It only maintains lists of the tables and columns.
 
-Syncing can be set to hourly, or daily at a specific time. Syncing can't be turned off completely, otherwise Metabase wouldn't work.
+Syncing can be set to hourly, or daily at a specific time. Syncing can't be turned off completely, otherwise eKomi wouldn't work.
 
 If you'd like to sync your database manually at any time, click on it from the Databases list in the admin panel and click on the Sync button on the right side of the screen:
 
@@ -79,14 +79,14 @@ If you'd like to sync your database manually at any time, click on it from the D
 
 #### Scanning for field values
 
-When Metabase first connects to your database, it takes a look at the metadata of the fields in your tables and automatically assigns them a field type. Metabase also takes a sample of each table to look for URLs, JSON, encoded strings, etc. If a field is classified wrong, you can always manually edit it from the **Metadata** tab in the Admin Panel.
+When eKomi first connects to your database, it takes a look at the metadata of the fields in your tables and automatically assigns them a field type. eKomi also takes a sample of each table to look for URLs, JSON, encoded strings, etc. If a field is classified wrong, you can always manually edit it from the **Metadata** tab in the Admin Panel.
 
-By default, Metabase also performs a more intensive daily sampling of each field's values and caches the distinct values in order to make checkbox and select filters work in dashboards and SQL/native questions. This process can slow down large databases, so if you have a particularly large database, you can turn on the option to choose when Metabase scans, and select one of three scan options in the Scheduling tab:
+By default, eKomi also performs a more intensive daily sampling of each field's values and caches the distinct values in order to make checkbox and select filters work in dashboards and SQL/native questions. This process can slow down large databases, so if you have a particularly large database, you can turn on the option to choose when eKomi scans, and select one of three scan options in the Scheduling tab:
 
 ![Scanning options](images/scanning-options.png)
 
 - **Regularly, on a schedule** lets you choose to scan daily, weekly, or monthly, and also lets you choose what time of day, or which day of the month to scan. This is the best option if you have a relatively small database, or if the distinct values in your tables change often.
-- **Only when adding a new filter widget** is a great option if you have a relatively large database, but you still want to enable dashboard and SQL/native query filters. With this option enabled, Metabase will only scan and cache the values of the field or fields that are required whenever a new filter is added to a dashboard or SQL/native question. For example, if you were to add a dashboard category filter, mapped to one field called `Customer ID` and another one called `ID`, only those two fields would be scanned at the moment the filter is saved.
+- **Only when adding a new filter widget** is a great option if you have a relatively large database, but you still want to enable dashboard and SQL/native query filters. With this option enabled, eKomi will only scan and cache the values of the field or fields that are required whenever a new filter is added to a dashboard or SQL/native question. For example, if you were to add a dashboard category filter, mapped to one field called `Customer ID` and another one called `ID`, only those two fields would be scanned at the moment the filter is saved.
 - **Never, I'll do this manually if I need to** is an option for databases that are either prohibitively large, or which never really have new values added. If you want to trigger a manual re-scan, click the button in top-right of the database's page that says "Re-scan field values now."
 
 If for some reason you need to flush out the cached field values for your database, click the button that says "Discard saved field values" in the top-right of the database's page.
@@ -103,7 +103,7 @@ On either the table settings or field settings page, you'll see these options:
 
 ### Deleting Databases
 
-To delete a database from Metabase, click on **Remove this database** from the database detail screen.
+To delete a database from eKomi, click on **Remove this database** from the database detail screen.
 
 ![databaseconnection](images/DatabaseConnection.png)
 
@@ -113,9 +113,9 @@ You can also delete a database from the database list: hover over the row with t
 
 **Caution: Deleting a database is irreversible! All saved questions and dashboard cards based on the database will be deleted as well!**
 
-### SSH Tunneling In Metabase
+### SSH Tunneling In eKomi
 ---
-Metabase has the ability to connect to some databases by first establishing a connection to a server in between Metabase and a data warehouse, then connect to the data warehouse using that connection as a bridge. This makes connecting to some data warehouses possible in situations that would otherwise prevent the use of Metabase.
+eKomi has the ability to connect to some databases by first establishing a connection to a server in between eKomi and a data warehouse, then connect to the data warehouse using that connection as a bridge. This makes connecting to some data warehouses possible in situations that would otherwise prevent the use of eKomi.
 
 
 #### When To Use This Feature
@@ -124,7 +124,7 @@ There are two basic cases for using an SSH tunnel rather than connecting directl
 * A direct connection is impossible
 * A direct connection is forbidden due to a security policy
 
-Sometimes when a data warehouse is inside an enterprise environment, direct connections are blocked by security devices such as firewalls and intrusion prevention systems. To work around this many enterprises offer a VPN, a bastion host, or both. VPNs are the more convenient and reliable option though bastion hosts are used frequently, especially with cloud providers such as Amazon Web Services where VPC (Virtual Private Clouds) don't allow direct connections. Bastion hosts offer the option to first connect to a computer on the edge of the protected network, then from that computer establish a second connection to the data warehouse on the internal network and essentially patch these two connestions together. Using the SSH tunneling feature, Metabase is able to automate this process in many cases. If a VPN is available that should be used in preference to SSH tunneling.
+Sometimes when a data warehouse is inside an enterprise environment, direct connections are blocked by security devices such as firewalls and intrusion prevention systems. To work around this many enterprises offer a VPN, a bastion host, or both. VPNs are the more convenient and reliable option though bastion hosts are used frequently, especially with cloud providers such as Amazon Web Services where VPC (Virtual Private Clouds) don't allow direct connections. Bastion hosts offer the option to first connect to a computer on the edge of the protected network, then from that computer establish a second connection to the data warehouse on the internal network and essentially patch these two connestions together. Using the SSH tunneling feature, eKomi is able to automate this process in many cases. If a VPN is available that should be used in preference to SSH tunneling.
 
 #### How To Use This Feature
 
@@ -168,16 +168,16 @@ There are several inherent limitations to connecting through a tunnel:
 
 #### What if The Built in SSH Tunnels Don't Fit My Needs?
 
-This feature exists as a convenient wrapper around SSH and automates the common cases of connecting through a tunnel. It also makes connecting possible from systems that don't have or allow shell access. Metabase uses a built in SSH client that does not depend on the installed system's ssh client. This allows connecting from systems where it's not possible to run SSH manually, it also means that Metabase cannot take advantage of authentication services provided by the system such as Windows Domain Authentication or Kerberos Authentication.
+This feature exists as a convenient wrapper around SSH and automates the common cases of connecting through a tunnel. It also makes connecting possible from systems that don't have or allow shell access. eKomi uses a built in SSH client that does not depend on the installed system's ssh client. This allows connecting from systems where it's not possible to run SSH manually, it also means that eKomi cannot take advantage of authentication services provided by the system such as Windows Domain Authentication or Kerberos Authentication.
 
-If you need to connect using a method not enabled by Metabase, you can often accomplish this by running ssh directly:
+If you need to connect using a method not enabled by eKomi, you can often accomplish this by running ssh directly:
 
     ssh -Nf -L input-port:internal-server-name:port-on-server username@bastion-host.domain.com
 
-This allows you to use the full array of features included in ssh. If you find yourself doing this often, please let us know so we can see about making your process more convenient through Metabase.
+This allows you to use the full array of features included in ssh. If you find yourself doing this often, please let us know so we can see about making your process more convenient through eKomi.
 
 
 ---
 
 ## Next: enabling features that send email
-Metabase can send emails for certain features, like email invites, but first you need to [set up an email account](02-setting-up-email.md).
+eKomi can send emails for certain features, like email invites, but first you need to [set up an email account](02-setting-up-email.md).
